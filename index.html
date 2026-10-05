@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sumithra.V | Personal Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #12001f;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+            background: rgba(18, 0, 31, 0.85);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255, 105, 180, 0.25);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff69b4;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #d8b4fe;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff69b4;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            padding: 100px 20px 60px;
+
+            background:
+                radial-gradient(circle at top left, #4b126e 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #8b155e 0%, transparent 35%),
+                #12001f;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .crown {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            margin-bottom: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #fff,
+                #ff69b4,
+                #d8b4fe,
+                #ffd700
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: #e9d5ff;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #d6c6df;
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #ff69b4, #9b2c83);
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+        }
+
+        .secondary-btn {
+            border: 1px solid #ff69b4;
+            color: #ffb6d9;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* General Sections */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #ff69b4;
+        }
+
+        .section-title p {
+            color: #a99ab0;
+            margin-top: 8px;
+        }
+
+        /* About */
+        .about {
+            background: #180025;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .profile-card {
+            padding: 35px;
+            text-align: center;
+
+            background: linear-gradient(
+                145deg,
+                rgba(139, 21, 94, 0.35),
+                rgba(75, 18, 110, 0.3)
+            );
+
+            border: 1px solid rgba(255, 105, 180, 0.25);
+            border-radius: 25px;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-icon {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: linear-gradient(135deg, #ff69b4, #6d28d9);
+            border: 5px solid #ffd1e8;
+
+            font-size: 4rem;
+        }
+
+        .profile-card h3 {
+            color: #ffd1e8;
+            font-size: 1.5rem;
+        }
+
+        .profile-card p {
+            color: #bfaec7;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .about-text p {
+            color: #c9b9d0;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #ff69b4;
+            font-weight: bold;
+        }
+
+        /* Interests */
+        .interests {
+            background: #12001f;
+        }
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            padding: 30px;
+            border-radius: 20px;
+
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 105, 180, 0.18);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #ff69b4;
+            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.12);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #ffd1e8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #b8a9bf;
+        }
+
+        /* Rajasthani Section */
+        .heritage {
+            background:
+                linear-gradient(
+                    rgba(42, 8, 48, 0.92),
+                    rgba(42, 8, 48, 0.92)
+                ),
+                radial-gradient(circle, #8b155e, #210029);
+            text-align: center;
+        }
+
+        .heritage-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .heritage-symbol {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .heritage h2 {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .heritage p {
+            color: #eadde9;
+            font-size: 1.1rem;
+        }
+
+        .quote {
+            margin-top: 25px;
+            padding: 20px;
+            border-left: 4px solid #ff69b4;
+            background: rgba(255, 105, 180, 0.08);
+            color: #ffc5df;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        /* Skills */
+        .learning {
+            background: #180025;
+        }
+
+        .learning-box {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-header span:first-child {
+            color: #f4dcec;
+        }
+
+        .skill-header span:last-child {
+            color: #ff69b4;
+        }
+
+        .progress {
+            height: 9px;
+            background: #2c1735;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #ff69b4, #8b5cf6);
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            background: #12001f;
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            padding: 45px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 105, 180, 0.12),
+                    rgba(139, 92, 246, 0.12)
+                );
+
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        .contact-box h2 {
+            font-size: 2.2rem;
+            color: #ff69b4;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #c7b6cd;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0b0012;
+            color: #88758f;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: #ff69b4;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            nav {
+                position: absolute;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Sumithra<span>.V</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#heritage">Heritage</a></li>
+            <li><a href="#learning">Learning</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="crown">👑</div>
+
+            <h1>Sumithra.V</h1>
+
+            <h2>Curious Mind • Creative Soul • Proud Rajasthani Girl</h2>
+
+            <p>
+                Welcome to my little corner of the internet.
+                I love learning new things, exploring technology,
+                enjoying activities, and getting lost in amazing
+                anime and C-dramas.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn primary-btn">Know Me ✨</a>
+                <a href="#interests" class="btn secondary-btn">My Interests 💗</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>A little bit about the person behind the page</p>
+        </div>
+
+        <div class="about-container">
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    👩🏻‍💻
+                </div>
+
+                <h3>Sumithra.V</h3>
+
+                <p>
+                    Learner • Dreamer • Explorer
+                </p>
+
+            </div>
+
+            <div class="about-text">
+
+                <h3>Hello there! 🌸</h3>
+
+                <p>
+                    I'm <span class="highlight">Sumithra.V</span>,
+                    someone who genuinely enjoys learning new things.
+                    Whether it's related to <span class="highlight">CSE</span>
+                    or a completely new activity, I'm always curious
+                    to explore it.
+                </p>
+
+                <p>
+                    When I'm not learning or experimenting with something
+                    new, you'll probably find me watching
+                    <span class="highlight">anime</span> or
+                    <span class="highlight">C-dramas</span>.
+                </p>
+
+                <p>
+                    I also know the <span class="highlight">Rajasthani language</span>
+                    and I'm proudly connected to my Rajasthani roots.
+                    My culture is an important part of who I am.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Interests Section -->
+    <section class="interests" id="interests">
+
+        <div class="section-title">
+            <h2>Things I Love</h2>
+            <p>The little things that make me happy</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>CSE & Technology</h3>
+                <p>
+                    I enjoy learning about computer science,
+                    technology, coding, and discovering how
+                    things work.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Learning New Things</h3>
+                <p>
+                    I love exploring new topics and activities.
+                    Every new skill is another opportunity
+                    to grow.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌸</div>
+                <h3>Anime & C-Dramas</h3>
+                <p>
+                    Stories, characters, emotions, adventures,
+                    and beautiful worlds are some of my favorite
+                    ways to relax.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Heritage Section -->
+    <section class="heritage" id="heritage">
+
+        <div class="heritage-content">
+
+            <div class="heritage-symbol">👑</div>
+
+            <h2>Proud Rajasthani Girl</h2>
+
+            <p>
+                I know the Rajasthani language and I'm proud
+                of my Rajasthani identity and heritage.
+                My roots remind me of the beauty of culture,
+                traditions, stories, and belonging.
+            </p>
+
+            <div class="quote">
+                "My roots are a part of my story, and I carry
+                them with pride wherever I go. 💗"
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Learning Section -->
+    <section class="learning" id="learning">
+
+        <div class="section-title">
+            <h2>Always Learning</h2>
+            <p>Curiosity keeps me moving forward 🚀</p>
+        </div>
+
+        <div class="learning-box">
+
+            <div class="skill">
+
+                <div class="skill-header">
+                    <span>Computer Science</span>
+                    <span>Learning</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+                    <span>New Technologies</span>
+                    <span>Exploring</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+                    <span>Creative Activities</span>
+                    <span>Discovering</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 65%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+                    <span>Curiosity</span>
+                    <span>∞</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%;"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact / Closing Section -->
+    <section class="contact">
+
+        <div class="contact-box">
+
+            <h2>That's Me! 💕</h2>
+
+            <p>
+                A curious learner, a technology enthusiast,
+                an anime & C-drama lover, and a proud
+                Rajasthani girl.
+            </p>
+
+            <a href="#home" class="btn primary-btn">
+                Back to Top ↑
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        Made with <span>♥</span> by Sumithra.V
+    </footer>
+
+</body>
+</html>
